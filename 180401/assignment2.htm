@@ -1,0 +1,67 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Assignment-2</title>
+    
+    <style>
+        body{
+            background: -moz-linear-gradient(gray,white);
+            background: -webkit-linear-gradient(gray,white);
+            background: -ms-linear-gradient(gray,white);
+            background: -o-linear-gradient(gray,white);
+            background: linear-gradient(gray,white);
+        }
+        div#parent {
+            border-radius: 25px;
+            border: 0.5px solid gray;
+            padding: 10px 15px;
+            width: 250px;
+            height: 400px;
+            background-color: #989898;
+            margin: auto; 
+            margin-top: 30px;
+        }
+        h2{
+            
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            line-height: 5px;
+	    font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            line-height: 10px;
+            width: 250px;
+        }
+        input#submit{
+            height: 30px;
+        }
+        #admin{
+            font-size: 15px;
+        }   
+    </style>
+</head>
+<body>
+    <div id="parent">
+       <h2>Registration Form</h2>
+       <form action="mail2.php"method="post">
+           <div id="naMe"><b>Enter your name:</b></div></br>
+           <input type="text" name="username" maxlength="20"><br><br><br>
+           <div id="Address"><b>Enter your Address:</b></div></br>
+           <input type="text" name="address" maxlength="20"><br><br><br>
+           <div id="Email"><b>Enter your email:</b></div></br>
+           <input type="email" name="email" pattern="[a-z]+@[a-z]+\.com$"><br><br><br>
+           <div id="Num"><b>Enter your Mobile number:</b></div></br>
+           <input type="number" name="mobile number" size="10" pattern="[0-9]+"><br><br><br>  
+           <div id="Acc"><b>Enter your Account number:</b></div></br>
+           <input type="number" name="acc number" size="5" pattern="[0-9]+"><br><br><br> 
+           <div id="Password"><b>Enter your password:</b></div></br>
+           <input type="password" name="password" maxlength="20" pattern="[a-zA-Z0-9]+" ><br><br><br>
+           <input type="Submit" value="Submit" id="submit">	
+       </form>
+       <div id="admin"><a href="http://www.facebook.com">Admin login</a></div> 
+    </div> 
+</body>

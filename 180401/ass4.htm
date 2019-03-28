@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Enter password:</p>
+<input id="pass" type="password">
+<button type="button" onclick="arr()">SUBMIT</button>
+
+<p id="demo"></p>
+
+<script>
+function arr(){
+    var s1,temp=0;
+    var a1= ["123456", "password", "123456789", "12345678", "12345", "111111", "1234567", "sunshine", "qwerty", "iloveyou", "princess", "admin", "welcome", "666666", "abc123", "football", "123123", "monkey", "654321", "!@#$%^&*", "charlie", "aa123456", "donald", "password1", "qwerty123"];
+    var x = document.getElementById("pass").value
+    var s2= x;
+    //var m= s1.length;
+    //var n= s2.length
+    //document.getElementById("demo").innerHTML = recFindEditDistance(s1,s2,s1.length,s2.length) + x;
+    for(var i=0; i<a1.length; i++){
+      s1= a1[i];
+      var dist = recFindEditDistance(s1,s2,s1.length,s2.length);
+      if( dist < s2.length/2){
+        document.getElementById("demo").innerHTML= "weak password";
+        temp=1;
+        break;
+      }
+    }
+    if(temp===0){ document.getElementById("demo").innerHTML= "Ok password";}
+}    
+function recFindEditDistance(P, T, i, j) {
+    
+    //if (i === undefined || j === undefined) return recFindEditDistance(P, T, P.length - 1, T.length - 1);
+    if (i === 0 && j === 0) return 0;
+    if (i === 0) return j;
+    if (j === 0) return i;
+
+    var sub = recFindEditDistance(P, T, i-1, j-1) + (P[i]===T[j] ? 0 : 1);
+    var del = recFindEditDistance(P, T, i, j-1) + 1;
+    var add = recFindEditDistance(P, T, i-1, j) + 1;
+
+    return Math.min(sub, add, del);
+};
+
+</script>
+
+</body>
+</html> 
